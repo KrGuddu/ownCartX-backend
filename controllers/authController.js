@@ -68,9 +68,18 @@ export const getUser = catchAsyncErrors(async (req, res, next) => {
 export const logout = catchAsyncErrors(async (req, res, next) => {
   res
     .status(200)
-    .cookie("token", "", {
+    // .cookie("token", "", {
+    //   expires: new Date(Date.now()),
+    //   httpOnly: true,
+    // })
+    .cookie("token", "", {          // for different production deployment on render
       expires: new Date(Date.now()),
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite:
+        process.env.NODE_ENV === "production"
+          ? "none"
+          : "lax",
     })
     .json({
       success: true,
@@ -157,7 +166,7 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
 
 export const updatePassword = catchAsyncErrors(async (req, res, next) => {
   const { currentPassword, newPassword, confirmNewPassword } = req.body;
-  console.log(currentPassword, newPassword, confirmNewPassword)
+  // console.log(currentPassword, newPassword, confirmNewPassword)
   if (!currentPassword || !newPassword || !confirmNewPassword) {
     return next(new ErrorHandler("Please provide all required fields.", 400));
   }
