@@ -1,41 +1,175 @@
-# 🛒 OwnCartX Backend
+<h1 align ="center">🛒 OwnCartX Backend</h1>
 
-A scalable backend for an AI-powered e-commerce platform built using Node.js, Express, and MongoDB.
+A scalable backend for an AI-powered e-commerce platform built using Node.js, Express.js, PostgreSQL, Stripe, Cloudinary, and Gemini AI.
+
+---
+## 🚀 Live Demo
+🔗 Live Demo: https://owncartx.vercel.app
+
+## 📂 GitHub Repository
+📦 Client Repo: https://github.com/KrGuddu/ownCartX-client  
+📦 Server Repo: https://github.com/KrGuddu/ownCartX-backend
 
 ---
 
-## 🚀 Features
+# ✨ Features
 
-* 🔐 User Authentication (Register, Login & Logout)
-* 🔑 JWT-based Authorization
-* 🗄️ MongoDB Database Integration
-* ⚡ RESTful API Architecture
-* 📦 Modular Folder Structure
+## 🔐 Authentication & Authorization
+- User Registration & Login
+- JWT Authentication
+- Protected Routes
+- Role-Based Access (Admin/User)
+- Forgot Password System
+- Reset Password via Email
+- Secure Password Hashing
 
 ---
 
-## 🛠️ Tech Stack
+## 🛍️ Product Management
+- Create Product
+- Update Product
+- Delete Product
+- Get All Products
+- Get Single Product
+- Product Category Filtering
+- Pagination
+- Product Search
+- AI Product Recommendation/Search
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JSON Web Token (JWT)
+---
+
+## ⭐ Product Reviews
+- Add Review
+- Update Review
+- Delete Review
+- Product Rating System
+- User Review Validation
+
+---
+
+## 🛒 Orders Management
+- Place Orders
+- Order History
+- Order Details
+- Shipping Information
+- Order Status Update
+- Admin Order Management
+
+---
+
+## 💳 Payments
+- Stripe Payment Integration
+- Payment Intent Generation
+- Secure Checkout Flow
+
+---
+
+## 📧 Email Services
+- Forgot Password Email
+- Reset Password Email
+- SMTP Email Integration
+
+---
+
+## 👨‍💼 Admin Features
+- User Management
+- Product Management
+- Order Management
+- Dashboard Statistics APIs
+
+---
+
+## 🤖 AI Features
+- AI Product Recommendation
+- AI Search Suggestions
+- Gemini API Integration
+
+---
+
+## ☁️ Media Handling
+- Product Image Upload
+- Cloudinary Integration
+
+---
+
+# 🛠️ Tech Stack
+
+## 🌐 Backend
+- Node.js
+- Express.js
+
+## 🗄️ Database
+- PostgreSQL
+
+## 🔑 Authentication
+- JWT
+- bcryptjs
+
+## 💳 Payments
+- Stripe
+
+## ☁️ Cloud Storage
+- Cloudinary
+
+## 📧 Email Service
+- Nodemailer
+- SMTP
+
+## 🤖 AI Integration
+- Google Gemini API
+
+## 📦 Other Tools & Libraries
+- dotenv
+- cors
+- cookie-parser
+- express-fileupload
+- multer
+- validator
 
 ---
 
 ## 📂 Project Structure
 
 ```
-backend/
-├── controllers/
-├── routes/
-├── models/
-├── config/
-├── middlewares/   (coming soon)
-├── index.js
-├── package.json
+OWNCARTX/
+│
+├── backend/
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── productController.js
+│   │   └── orderController.js
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── productRoutes.js
+│   │   └── orderRoutes.js
+│   │
+│   ├── middlewares/
+│   ├── models/
+│   ├── utils/
+│   ├── app.js
+│   ├── server.js
+│   └── package.json
 ```
+---
+
+# 🔒 Security Features
+
+- JWT Authentication
+- Password Hashing
+- Protected APIs
+- Role-Based Authorization
+- Secure Environment Variables
+- Error Handling Middleware
+
+---
+
+# ⚡ API Architecture
+
+- RESTful APIs
+- MVC Architecture
+- Middleware-Based Error Handling
+- Modular Folder Structure
 
 ---
 
@@ -62,9 +196,26 @@ npm install
 4. Create a `.env` file
 
 ```
-PORT=8000
-MONGODB_URL=your_mongodb_url
-JWT_SECRET=your_secret_key
+PORT=5000
+
+DATABASE_URL=your_postgresql_database_url
+
+JWT_SECRET=your_jwt_secret
+
+COOKIE_EXPIRE=7
+
+STRIPE_SECRET_KEY=your_stripe_secret_key
+
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+SMTP_HOST=your_smtp_host
+SMTP_PORT=your_smtp_port
+SMTP_MAIL=your_email
+SMTP_PASSWORD=your_email_password
+
+GEMINI_API_KEY=your_google_gemini_api_key
 ```
 
 5. Run the server
@@ -100,8 +251,12 @@ Refer to `.env.example` for required variables.
 ---
 
 ## 👨‍💻 Author
+**Mr. Guddu Kumar**  
+Software Developer
 
-Guddu Kumar
+🌐 Portfolio: https://krguddu.netlify.app
+
+🐙 GitHub: https://github.com/KrGuddu
 
 ---
 
