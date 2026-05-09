@@ -519,32 +519,17 @@ export const fetchAIFilteredProducts = catchAsyncErrors(
     }
 
     // STEP 2: AI FILTERING
-    // const { success, products } = await getAIRecommendation(
-    //   req,
-    //   res,
-    //   userPrompt,
-    //   filteredProducts
-    // );
-    const aiResult = await getAIRecommendation(
+    const { success, products } = await getAIRecommendation(
+      req,
+      res,
       userPrompt,
       filteredProducts
     );
 
-    // res.status(200).json({
-    //   success: success,
-    //   message: "AI filtered products.",
-    //   products,
-    // });
-    if (!aiResult.success) {
-      return next(
-        new ErrorHandler(aiResult.message, 500)
-      );
-    }
-
-    return res.status(200).json({
-      success: true,
+    res.status(200).json({
+      success: success,
       message: "AI filtered products.",
-      products: aiResult.products,
+      products,
     });
   }
 );
